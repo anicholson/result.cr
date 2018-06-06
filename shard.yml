@@ -1,0 +1,9 @@
+name: result.cr
+version: 0.1.0
+
+authors:
+  - Andy Nicholson <andrew@anicholson.net>
+
+crystal: 0.24.2
+
+license: MIT
