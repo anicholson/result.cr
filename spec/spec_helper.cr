@@ -1,2 +1,2 @@
 require "spec"
-require "../src/result.cr"
+require "../src/result"

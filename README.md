@@ -1,6 +1,6 @@
 # result.cr
 
-TODO: Write a description here
+The Result Monad, in Crystal.
 
 ## Installation
 
