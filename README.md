@@ -31,37 +31,37 @@ alias PersonResult = Result(Person,String)
 e = PersonResult.error("will cascade through")
 v = PersonResult.ok(Person.new(first_name: "Erica", last_name: "Strange"))
 
-puts e.is_a?(PersonResult) # => true
-puts v.is_a?(PersonResult) # => true
+e.is_a?(PersonResult) # => true
+v.is_a?(PersonResult) # => true
 
 # querying success
-puts e.ok?    # => false
-puts v.ok?    # => true
+e.ok?    # => false
+v.ok?    # => true
 
-puts e.error? # => true
-puts v.error? # => false
+e.error? # => true
+v.error? # => false
 
 # unwrapping the Result
 
-puts e.error # => "will cascade through" : String
-puts v.value # => Person(@first_name:"Erica", @last_name:"Strange")
+e.error # => "will cascade through" : String
+v.value # => Person(@first_name:"Erica", @last_name:"Strange")
 
-#puts e.value # => raises ResultError
-#puts v.error # => raises ResultError
+e.value # => raises ResultError
+v.error # => raises ResultError
 
 # chaining results
 
-puts e.andThen {|r| v }.ok? # => false
-puts e.orElse  {|r| v }.ok? # => true
+e.andThen {|r| v }.ok? # => false
+e.orElse  {|r| v }.ok? # => true
 
 new_v = v.andThen {|r| r.first_name = "Tom"; PersonResult.ok(r) }
         .andThen {|r| r.last_name  = "Collins"; PersonResult.ok(r) }
 
-puts new_v.ok?   # => true
-puts new_v.value # => Person(@first_name: "Tom", @last_name: "Collins")
+new_v.ok?   # => true
+new_v.value # => Person(@first_name: "Tom", @last_name: "Collins")
 
-puts v.andThen {|r| e }.ok?  # => false
-puts v.andThen {|r| e } == e # => true
+v.andThen {|r| e }.ok?  # => false
+v.andThen {|r| e } == e # => true
 
 ```
 
