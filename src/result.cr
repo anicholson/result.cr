@@ -7,8 +7,8 @@ abstract class Result(V, E)
   abstract def ok? : Boolean
   abstract def error? : Boolean
 
-  abstract def andThen(&block : self -> self) : self
-  abstract def orElse(&block : self -> self) : self
+  abstract def andThen(&block : V -> Result(V,E)) : Result(V,E)
+  abstract def orElse(&block :  E -> Result(V,E)) : Result(V,E)
 
   class Ok(V, E) < Result(V, E)
     protected def initialize(@value : V)
@@ -28,11 +28,11 @@ abstract class Result(V, E)
       false
     end
 
-    def andThen(&block : self -> self)
-      yield self
+    def andThen(&block : V -> Result(V,E)) : Result(V,E)
+      yield self.value
     end
 
-    def orElse(&block : self -> self)
+    def orElse(&block : E -> Result(V,E)) : Result(V,E)
       self
     end
   end
@@ -55,12 +55,12 @@ abstract class Result(V, E)
       true
     end
 
-    def andThen(&block : self -> self)
+    def andThen(&block : V -> Result(V,E)) : Result(V,E)
       self
     end
 
-    def orElse(&block : self -> self)
-      yield self
+    def orElse(&block : E -> Result(V,E)) : Result(V,E)
+      yield self.error
     end
   end
 

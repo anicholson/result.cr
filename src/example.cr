@@ -1,21 +1,4 @@
-# result.cr
-
-The Result Monad, in Crystal.
-
-## Installation
-
-Add this to your application's `shard.yml`:
-
-```yaml
-dependencies:
-  result:
-    github: anicholson/result.cr
-```
-
-## Usage
-
-```crystal
-require "result/result"
+require "./result"
 
 struct Person
   property first_name : String, last_name : String
@@ -62,17 +45,3 @@ puts new_v.value # => Person(@first_name: "Tom", @last_name: "Collins")
 
 puts v.andThen {|r| e }.ok?  # => false
 puts v.andThen {|r| e } == e # => true
-
-```
-
-## Contributing
-
-1. Fork it ( https://github.com/anicholson/result.cr/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [anicholson](https://github.com/anicholson) Andy Nicholson - creator, maintainer
