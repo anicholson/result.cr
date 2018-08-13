@@ -34,14 +34,14 @@ puts v.value # => Person(@first_name:"Erica", @last_name:"Strange")
 
 # chaining results
 
-puts e.andThen {|r| v }.ok? # => false
-puts e.orElse  {|r| v }.ok? # => true
+puts e.and_then {|r| v }.ok? # => false
+puts e.or_else  {|r| v }.ok? # => true
 
-new_v = v.andThen {|r| r.first_name = "Tom"; PersonResult.ok(r) }
-        .andThen {|r| r.last_name  = "Collins"; PersonResult.ok(r) }
+new_v = v.and_then {|r| r.first_name = "Tom"; PersonResult.ok(r) }
+        .and_then {|r| r.last_name  = "Collins"; PersonResult.ok(r) }
 
 puts new_v.ok?   # => true
 puts new_v.value # => Person(@first_name: "Tom", @last_name: "Collins")
 
-puts v.andThen {|r| e }.ok?  # => false
-puts v.andThen {|r| e } == e # => true
+puts v.and_then {|r| e }.ok?  # => false
+puts v.and_then {|r| e } == e # => true
