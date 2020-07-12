@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-alias R = Result(Int32,String)
+alias R = Result(Int32, String)
 
 describe Result do
   describe "Ok" do

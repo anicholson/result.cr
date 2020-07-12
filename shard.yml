@@ -6,9 +6,15 @@ authors:
 
 crystal: 0.35.0
 
+dependencies:
+  version_tools:
+    github: anicholson/crystal-version-tools
+    version: < 1
+
 development_dependencies:
   crytic:
     github: hanneskaeufler/crytic
     version: ~> 7
+
 
 license: MIT
