@@ -4,6 +4,11 @@ version: 0.3.1
 authors:
   - Andy Nicholson <andrew@anicholson.net>
 
-crystal: 0.24.2
+crystal: 0.35.0
+
+development_dependencies:
+  crytic:
+    github: hanneskaeufler/crytic
+    version: ~> 7
 
 license: MIT
