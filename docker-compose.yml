@@ -6,5 +6,5 @@ services:
       dockerfile: './.buildkite/Dockerfile'
       context: '.'
       args:
-        version: 0.35.0
+        VERSION: 0.35.0
 
