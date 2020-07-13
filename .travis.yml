@@ -1,1 +1,15 @@
 language: crystal
+os:
+  - linux
+  - osx
+dist: 
+  - xenial
+crystal:
+  - latest
+  - nightly
+install:
+  - shards install
+script:
+  - crystal spec
+  - bin/ameba
+  - bin/crytic -m 68
