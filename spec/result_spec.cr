@@ -21,7 +21,8 @@ describe Result do
 
       begin
         R.ok(234).error
-      rescue
+      rescue e : Exception
+        e.message.should eq("Ok has no error")
         result = true
       end
 
@@ -35,7 +36,8 @@ describe Result do
 
       begin
         R.error("error").value
-      rescue
+      rescue e : Exception
+        e.message.should eq("Error has no value")
         explosion = true
       end
 
