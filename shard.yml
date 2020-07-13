@@ -14,7 +14,7 @@ dependencies:
 development_dependencies:
   crytic:
     github: hanneskaeufler/crytic
-    version: ~> 7
+    branch: master
 
 
 license: MIT
