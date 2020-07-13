@@ -1,7 +1,7 @@
 # result.cr
 
 The Result Monad, in Crystal.
-[![Build Status](https://travis-ci.org/anicholson/result.cr.svg?branch=main)](https://travis-ci.org/anicholson/result.cr)
+[![Build status](https://badge.buildkite.com/e7fc72d410790459a93d80e5bdd119e906570bfd5014859faa.svg?branch=main)](https://buildkite.com/andrewdotnich/result-dot-cr)
 
 ## Installation
 
