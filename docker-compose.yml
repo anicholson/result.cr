@@ -8,3 +8,9 @@ services:
       args:
         VERSION: 0.35.0
 
+  ci-latest:
+    build:
+      dockerfile: './.buildkite/Dockerfile'
+      context: '.'
+      args:
+        VERSION: latest
