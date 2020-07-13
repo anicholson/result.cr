@@ -1,7 +1,7 @@
 # result.cr
 
 The Result Monad, in Crystal.
-[![Build Status](https://travis-ci.org/anicholson/result.cr.svg?branch=master)](https://travis-ci.org/anicholson/result.cr)
+[![Build Status](https://travis-ci.org/anicholson/result.cr.svg?branch=main)](https://travis-ci.org/anicholson/result.cr)
 
 ## Installation
 
