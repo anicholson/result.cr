@@ -4,7 +4,7 @@ set -e
 set -u
 set -o errexit
 
-declare -a versions=('0.35.0' 'latest')
+declare -a versions=('0.35.1' 'latest')
 
 echo "steps:"
 
